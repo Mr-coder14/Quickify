@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:title="Home"
+    android:id="@+id/Homebottom"
+    android:icon="@drawable/bottom_btn1"
+
+    />
+    <item
+        android:title="Board"
+        android:id="@+id/boardbottom"
+        android:icon="@drawable/bottom_btn2"
+        />
+    <item
+        android:title="BookMark"
+        android:id="@+id/bookmarkbottom"
+        android:icon="@drawable/bottom_btn3"
+        />
+    <item
+        android:title="Profile"
+        android:id="@+id/profilebottom"
+        android:icon="@drawable/bottom_btn4"/>
+</menu>
