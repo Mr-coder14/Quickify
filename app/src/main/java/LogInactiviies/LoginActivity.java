@@ -1,12 +1,15 @@
 package LogInactiviies;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +24,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    private TextView registerbtn;
+    private TextView registerbtn,forget;
     private Button loginbtn;
     private FirebaseAuth auth;
     private EditText email,password;
@@ -35,6 +38,13 @@ public class LoginActivity extends AppCompatActivity {
         registerbtn=findViewById(R.id.registerpage);
         loginbtn=findViewById(R.id.loginbtn);
         email=findViewById(R.id.emaillogin);
+        forget=findViewById(R.id.forgettxt);
+        forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                forgetpassword();
+            }
+        });
         password=findViewById(R.id.passwordlogin);
         auth=FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -52,6 +62,48 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void forgetpassword() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dailog_forgot, null);
+        EditText emailBox = dialogView.findViewById(R.id.emailBox);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+        dialogView.findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String userEmail = emailBox.getText().toString();
+                if (TextUtils.isEmpty(userEmail) && !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+                    Toast.makeText(LoginActivity.this, "Enter your registered email id", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                auth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Check your email", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Unable to send, failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
+        dialogView.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        }
+        dialog.show();
+    }
+
+
+
 
     private void login() {
         String email1 = email.getText().toString();
