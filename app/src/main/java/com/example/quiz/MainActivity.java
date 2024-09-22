@@ -14,7 +14,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import Fragments.BoardFragment;
+import Fragments.BookFragment;
 import Fragments.HomeFragment;
+import Fragments.ProfileFragment;
 import LogInactiviies.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
                 if(id==R.id.Homebottom){
                     fragment= new HomeFragment();
                 }if(id==R.id.boardbottom){
-                    fragment=null;
+                    fragment=new BoardFragment();
                 }
                 if (id==R.id.bookmarkbottom){
-                    fragment=null;
+                    fragment=new BookFragment();
                 }if(id==R.id.profilebottom){
-                    fragment=null;
+                    fragment=new ProfileFragment();
                 }
                 if(fragment!=null){
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
