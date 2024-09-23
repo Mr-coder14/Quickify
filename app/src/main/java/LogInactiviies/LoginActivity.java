@@ -22,13 +22,30 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
+
+
+
     private TextView registerbtn,forget;
     private Button loginbtn;
     private FirebaseAuth auth;
     private EditText email,password;
     private ProgressDialog progressDialog;
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser userid=auth.getCurrentUser();
+        if(userid!=null){
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            finish();
+        }
+        else {
+            //so
+        }
+
+    }
 
 
     @Override

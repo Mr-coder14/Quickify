@@ -12,16 +12,17 @@ import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.auth.FirebaseAuth;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+
 
 import Fragments.BoardFragment;
 import Fragments.BookFragment;
 import Fragments.HomeFragment;
 import Fragments.ProfileFragment;
-import LogInactiviies.LoginActivity;
+
 
 public class MainActivity extends AppCompatActivity {
-    private BottomNavigationView bottomNavigationView;
+    private ChipNavigationBar bottomNavigationView;
     private Fragment fragment;
 
     @Override
@@ -36,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id=item.getItemId();
+            public void onItemSelected(int i) {
+                int id=i;
                 if(id==R.id.Homebottom){
                     fragment= new HomeFragment();
                 }if(id==R.id.boardbottom){
@@ -52,11 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(fragment!=null){
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
-                    return true;
-                }else {
-                    return false;
-                }
 
+                }
             }
         });
     }
