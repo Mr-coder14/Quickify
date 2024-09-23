@@ -5,7 +5,7 @@
     android:title="Home"
     android:id="@+id/Homebottom"
     android:icon="@drawable/bottom_btn1"
-    app:cnb_iconColor="@color/black"
+    app:cnb_iconColor="@color/white"
     app:cnb_textColor="@color/white"
     app:cnb_backgroundColor="@color/PrimaryColor"
 
@@ -14,7 +14,7 @@
         android:title="Board"
         android:id="@+id/boardbottom"
         android:icon="@drawable/bottom_btn2"
-        app:cnb_iconColor="@color/black"
+        app:cnb_iconColor="@color/white"
         app:cnb_textColor="@color/white"
         app:cnb_backgroundColor="@color/PrimaryColor"
         />
@@ -22,14 +22,14 @@
         android:title="BookMark"
         android:id="@+id/bookmarkbottom"
         android:icon="@drawable/bottom_btn3"
-        app:cnb_iconColor="@color/black"
+        app:cnb_iconColor="@color/white"
         app:cnb_textColor="@color/white"
         app:cnb_backgroundColor="@color/PrimaryColor"
         />
     <item
         android:title="Profile"
         android:id="@+id/profilebottom"
-        app:cnb_iconColor="@color/black"
+        app:cnb_iconColor="@color/white"
         app:cnb_textColor="@color/white"
         app:cnb_backgroundColor="@color/PrimaryColor"
         android:icon="@drawable/bottom_btn4"/>

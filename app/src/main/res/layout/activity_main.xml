@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -15,12 +15,13 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         />
-
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/bottomappbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="7dp"
+        android:layout_height="68dp"
+        android:layout_gravity="bottom"
+        android:padding="2dp"
+        android:background="@color/white"
         app:cnb_menuResource="@menu/bottom_menu"
         app:cnb_orientationMode="horizontal"
         app:cnb_addBottomInset="false"
@@ -33,5 +34,7 @@
         app:cnb_radius="20dp"
         app:cnb_iconSize="20dp"
         app:cnb_animationDuration="175"/>
+
+
 
 </LinearLayout>
