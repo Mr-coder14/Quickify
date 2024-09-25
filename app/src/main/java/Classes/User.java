@@ -5,11 +5,13 @@ public class User {
     private String email;
     private String userid;
     private String pass,phno;
+    public  User(){
 
-    public User(String name, String email, String pass, String phno,String userid) {
+    }
+
+    public User(String name, String email, String pass, String phno) {
         this.name = name;
         this.email = email;
-        this.userid=userid;
         this.pass = pass;
         this.phno = phno;
     }
