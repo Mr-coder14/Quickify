@@ -49,6 +49,16 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:src="@drawable/message"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="17dp"
+            android:layout_gravity="center"
+            android:id="@+id/messageactivity"/>
 
 
 
