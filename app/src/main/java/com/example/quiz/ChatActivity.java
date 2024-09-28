@@ -75,6 +75,9 @@ public class ChatActivity extends AppCompatActivity {
                     messageList.add(message);
                 }
                 chatAdapter.notifyDataSetChanged();
+                if (messageList.size() > 0) {
+                    recyclerView.scrollToPosition(messageList.size() - 1);
+                }
             }
 
             @Override
@@ -104,6 +107,28 @@ public class ChatActivity extends AppCompatActivity {
                     User userModel1 = new User(userModel.getPhno(), userModel.getName(), userModel.getUserid());
 
                     chatrefrence.child(FirebaseAuth.getInstance().getUid()).child(userModel.getUserid()).setValue(userModel1);
+                    chatrefrence.child(userModel.getUserid()).child(FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.exists()){
+                                int currentCount=0;
+
+                                if (snapshot.exists() && snapshot.child("messagecount").getValue() != null) {
+                                    currentCount = snapshot.child("messagecount").getValue(Integer.class);
+                                }
+                                int newCount = currentCount + 1;
+
+
+                                DatabaseReference countRef = chatrefrence.child(userModel.getUserid()).child(FirebaseAuth.getInstance().getUid()).child("messagecount");
+                                countRef.setValue(newCount);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
 
 
                 }

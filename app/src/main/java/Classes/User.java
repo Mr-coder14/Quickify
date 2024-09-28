@@ -9,6 +9,15 @@ public class User implements Parcelable {
     private String userid;
     private String pass;
     private String phno;
+    private int messagecount;
+
+    public int getMessagecount() {
+        return messagecount;
+    }
+
+    public void setMessagecount(int messagecount) {
+        this.messagecount = messagecount;
+    }
 
     // Default constructor
     public User() {}

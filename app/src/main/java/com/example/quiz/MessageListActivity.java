@@ -48,7 +48,7 @@ public class MessageListActivity extends AppCompatActivity {
         recyclerView.setVisibility(View.GONE);
         userid= FirebaseAuth.getInstance().getUid();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adaptor = new ChatlistAdaptor(this, userModels);
+        adaptor = new ChatlistAdaptor(this, userModels,userid);
         recyclerView.setAdapter(adaptor);
         databaseReference= FirebaseDatabase.getInstance().getReference().child("chatss").child(userid);
         imageButton.setOnClickListener(new View.OnClickListener() {
