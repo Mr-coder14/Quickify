@@ -2,9 +2,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/blue_bg"
-    android:padding="9dp"
-    android:orientation="vertical"
-    android:layout_marginTop="10dp"
+    android:padding="5dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp"
     android:layout_gravity="start">
 
     <TextView
@@ -12,6 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:layout_marginBottom="2dp"
+        android:layout_gravity="start|top"
         android:fontFamily="@font/plus"
         android:textSize="16sp" />
 
@@ -19,7 +21,8 @@
         android:id="@+id/chat_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="end|bottom"
         android:fontFamily="@font/plus"
         android:textColor="@color/black"
         android:textSize="9sp"
