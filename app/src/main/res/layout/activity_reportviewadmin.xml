@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".Reportviewadmin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/backButtonproductview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/back" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/productImagevieww"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/white_bg"
+                android:elevation="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bikelogo" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Car Details"
+                android:textColor="@color/black"
+                android:fontFamily="@font/lato"
+                android:textSize="22dp"
+                android:layout_marginTop="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/white_bg"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textView774"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="#182693"
+                        android:textSize="18sp"
+                        android:text="Brand Name" />
+                    <TextView
+                        android:id="@+id/BrandNameadmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="#5B5B5B"
+                        android:textAlignment="viewEnd"
+                        android:text="" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/view300"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D9D9D9"
+                    android:layout_margin="7dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textVi89ew4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Model No"
+                        android:textColor="#182693"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/modelnoadmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textAlignment="viewEnd"
+                        android:textColor="#5B5B5B"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="7dp"
+                    android:background="#D9D9D9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textVie7w4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Registration No"
+                        android:textColor="#182693"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/vehino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textAlignment="viewEnd"
+                        android:textColor="#5B5B5B"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Issue "
+                    android:textSize="25dp"
+                    android:fontFamily="@font/lato"
+                    android:textColor="@color/black"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_bg"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Issue Title"
+                        android:fontFamily="@font/lato"
+                        android:textColor="@color/black"
+                        android:textSize="19dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BreakDown"
+                        android:fontFamily="@font/plus"
+                        android:textColor="@color/DarkGray"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/issuetitleadmin"
+                        android:textSize="17dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Issue Description"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/lato"
+                        android:textSize="19dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/DarkGray"
+                        android:id="@+id/discriptionview"
+                        android:fontFamily="@font/plus"
+                        android:text="I love this dress! It's so well-made and comfortable, and it fits beautifully. The fabric is high quality and I'm sure I can wear it for years to come. It fits exactly as I wanted."
+                        android:textSize="17dp" />
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:fontFamily="@font/lato"
+                android:drawableStart="@drawable/baseline_location_on_24"
+                android:textSize="20sp"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/addressLabel" />
+
+            <!-- Address Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:elevation="8dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/white_bg"
+                android:layout_below="@id/addressLabel">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:id="@+id/addres1"
+                    android:background="@null"
+                    android:text="Nothing"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus"
+                    android:layout_margin="1dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

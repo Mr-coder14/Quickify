@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 
 import com.example.quiz.MessageListActivity;
 import com.example.quiz.R;
+import com.example.quiz.Reportissueactivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import LogInactiviies.LoginActivity;
@@ -24,6 +25,7 @@ import LogInactiviies.LoginActivity;
 public class HomeFragment extends Fragment {
     private LinearLayout cardView;
     private ImageView ms;
+    private Button btn;
 
     public HomeFragment() {
 
@@ -33,6 +35,14 @@ public class HomeFragment extends Fragment {
        View view=LayoutInflater.from(container.getContext()).inflate(R.layout.home_fragment,container,false);
        cardView=view.findViewById(R.id.tyu);
        ms=view.findViewById(R.id.messageactivity);
+       btn=view.findViewById(R.id.fixbtn);
+       btn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startActivity(new Intent(getContext(), Reportissueactivity.class));
+
+           }
+       });
        cardView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {

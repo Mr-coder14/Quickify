@@ -2,16 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/carwash"
+        android:label="Quickify"
+        android:roundIcon="@drawable/carwash"
         android:supportsRtl="true"
         android:theme="@style/Theme.Quiz"
         tools:targetApi="34">
+        <activity
+            android:name=".selectshop"
+            android:exported="false" />
+        <activity
+            android:name=".EditDetails"
+            android:exported="false" />
+        <activity
+            android:name=".sucessanimation"
+            android:exported="false" />
+        <activity
+            android:name=".Reportviewadmin"
+            android:exported="false" />
+        <activity
+            android:name=".Admimainactivity"
+            android:exported="false" />
+        <activity
+            android:name=".Reportissueactivity"
+            android:exported="false" />
         <activity
             android:name=".Searchuseractivity"
             android:exported="false" />

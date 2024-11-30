@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:layout_height="match_parent"
+    tools:context=".Reportissueactivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/uyo"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/backbtni"
+            android:src="@drawable/back"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Report Form"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:background="@drawable/pink_banner"
+                    android:id="@+id/fourwheeler"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/carlogo"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Four Wheeler"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/lato"
+                        android:layout_gravity="center"
+                        />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/tickfour"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_check_24"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/twowheeler"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/blue_banner"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/bikelogo"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Two Wheeler"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/lato"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/ticktwo"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_check_24"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload the Vehicle Image"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lato"
+                    android:textColor="@color/black"
+                    android:textSize="19sp"
+                    />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/upload"
+                    android:id="@+id/uploadimage1"
+                    />
+                    <ImageView
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        android:src="@drawable/upload"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/uploadimage"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <Button
+                    android:id="@+id/buttonUpload"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:text="Upload Vehicle Image" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:fontFamily="@font/lato"
+                android:drawableStart="@drawable/baseline_location_on_24"
+                android:textSize="20sp"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/addressLabel" />
+
+            <!-- Address Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:elevation="8dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/white_bg"
+                android:layout_below="@id/addressLabel">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ratiobtnaddress" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:id="@+id/address"
+                    android:background="@null"
+                    android:text="Paavai Engineering College,Pachal,Tamilnadu,637018"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus"
+                    android:layout_margin="1dp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Brand Name"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/lato"
+                    android:textSize="18sp"/>
+
+
+                <EditText
+                    android:id="@+id/textvehiclebrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:textColorHint="@color/LightGray"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Enter the Vehicle Brand Name"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Model No"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/lato"
+                    android:textSize="18sp"/>
+
+
+                <EditText
+                    android:id="@+id/brandnametxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter the Vehicle Model no"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColorHint="@color/LightGray"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus"
+                    android:padding="10dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Registration No"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/lato"
+                    android:textSize="18sp"/>
+
+
+                <EditText
+                    android:id="@+id/vehicleno"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Enter Registration No"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColorHint="@color/LightGray"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Issue Title"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/lato"
+                    android:textSize="18sp"/>
+
+
+                <EditText
+                    android:id="@+id/issuetitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Issue Title"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColorHint="@color/LightGray"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description About the Issue"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/lato"
+                    android:textSize="18sp"/>
+
+
+                <EditText
+                    android:id="@+id/editTextDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/LightGray"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus"
+                    android:background="@drawable/edittext_background"
+                    android:gravity="top"
+                    android:hint="Describe the issue with your Vehicle"
+                    android:inputType="textMultiLine"
+                    android:minLines="4"
+                    android:padding="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:id="@+id/charCountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/plus"
+                        android:padding="3dp"
+                        android:text="0/500" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/lato"
+                    android:layout_gravity="center"
+                    android:text="Submit Issue" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</LinearLayout>

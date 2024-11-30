@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.quiz.Admimainactivity;
 import com.example.quiz.MainActivity;
 import com.example.quiz.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,22 +35,29 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginbtn;
     private FirebaseAuth auth;
     private EditText email,password;
+    private ArrayList<String > adimns=new ArrayList<>();
     private ProgressDialog progressDialog;
     @Override
     protected void onStart() {
         super.onStart();
+        adimns.add("crazygaming45454@gmail.com");
+        adimns.add("veluselladurai5@gmail.com");
+        adimns.add("sruthikasalendran@gmail.com");
         FirebaseUser userid=auth.getCurrentUser();
         if(userid!=null){
-            startActivity(new Intent(LoginActivity.this,MainActivity.class));
-            finish();
+            if(adimns.contains(userid.getEmail())){
+                startActivity(new Intent(LoginActivity.this, Admimainactivity.class));
+                finish();
+            }else {
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                finish();
+            }
+
         }
         else {
-            //so
+
         }
-
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,11 +96,12 @@ public class LoginActivity extends AppCompatActivity {
         EditText emailBox = dialogView.findViewById(R.id.emailBox);
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
+
         dialogView.findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String userEmail = emailBox.getText().toString();
-                if (TextUtils.isEmpty(userEmail) && !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
+                if (TextUtils.isEmpty(userEmail) || !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
                     Toast.makeText(LoginActivity.this, "Enter your registered email id", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -107,17 +118,20 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
+
         dialogView.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
             }
         });
+
         if (dialog.getWindow() != null) {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         dialog.show();
     }
+
 
 
 
@@ -138,9 +152,17 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressDialog.dismiss();
                     if(task.isSuccessful()){
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        progressDialog.dismiss();
-                        finish();
+                        if(adimns.contains(email1)){
+                            startActivity(new Intent(LoginActivity.this, Admimainactivity.class));
+                            progressDialog.dismiss();
+                            finish();
+                        }
+                        else {
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            progressDialog.dismiss();
+                            finish();
+                        }
+
 
                     } else {
 
