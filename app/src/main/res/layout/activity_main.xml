@@ -34,7 +34,4 @@
         app:cnb_radius="20dp"
         app:cnb_iconSize="20dp"
         app:cnb_animationDuration="175"/>
-
-
-
 </LinearLayout>
